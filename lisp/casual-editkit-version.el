@@ -22,7 +22,7 @@
 
 ;;; Code:
 
-(defconst casual-editkit-version "0.1.0"
+(defconst casual-editkit-version "1.0.0"
   "Casual EditKit Version.")
 
 (defun casual-editkit-version ()
