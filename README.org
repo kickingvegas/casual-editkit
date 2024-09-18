@@ -7,7 +7,7 @@ Casual EditKit endeavors to surface the many different editing commands offered 
 
 - Register commands
 - Rectangle commands
-- Editing commands for words, sentences, paragraphs, and balanced expressions
+- Editing commands for words, sentences, paragraphs, and balanced expressions (sexps), and functions (defuns). 
   - Marking
   - Copying
   - Killing
@@ -45,7 +45,7 @@ Emacs has many commands that are easy to forget if not used frequently. Menus ar
 Casual EditKit requires usage of
 - Emacs ≥ 29.1
 - Casual Lib ≥ 1.1.0
-- Symbol Overlay ≥ 4.2
+- Casual Symbol Overlay ≥ 1.0.1
   
 Casual EditKit has been verified with the following configuration. 
 - Emacs 29.4 (macOS 14.5, Ubuntu Linux 22.04.4 LTS)
@@ -54,7 +54,8 @@ Casual EditKit has been verified with the following configuration.
 As Casual EditKit is new, we are looking for early adopters! Your [[https://github.com/kickingvegas/casual-symbol-overlay/discussions][feedback]] is welcome as it will likely impact Casual EditKit's evolution, particularly with regards to UI.
 
 * Install
-If installed via MELPA then add these lines to your Emacs initialization file with your binding of preference. For consistency with other Casual packages for different modes, use ~C-o~. 
+Typical installation of Casual EditKit is via MELPA. A reference menu (~casual-editkit-main-tmenu~) illustrating nearly all the different menus offered by Casual EditKit is provided. This menu can be used “as-is” with your binding of preference. For consistency with other Casual Packages, the binding ~C-o~ is used in the example below. Other candidate bindings include ~M-o~ and ~F10~. To facilitate default access to this menu, the configuration below sets this binding to be global which can be overridden per mode. This is /not/ mandatory and users are free to integrate Casual EditKit into their Emacs configuration however they see fit. 
+
 #+begin_src elisp :lexical no
   (require 'casual-editkit) ;; optional
   (keymap-global-set "C-o" #'casual-editkit-main-tmenu)
@@ -67,6 +68,7 @@ If you use ~use-package~, here is the recipe for installing and configuring it.
     :bind (("C-o" . casual-editkit-main-tmenu)))
 #+end_src
 
+For motivated users desiring a bespoke solution, it is recommended that they use Casual EditKit as a library of menus to build their own workflows.
 
 ** A Note on Package Dependencies
 Casual EditKit requires Casual Lib which in turn requires a recent installation of Transient 0.6.0+ from either [[https://elpa.gnu.org/packages/transient.html][ELPA]] or [[https://melpa.org/#/transient][MELPA]]. As an older version of Transient is built-in to the Emacs release, the package manager ~package.el~ will /not/ update this package unless the customizable variable ~package-install-upgrade-built-in~ is set to ~t~. Set this variable and proceed with installing Casual EditKit. Alternately invoking ~package-install~ with a prefix (~C-u~) will temporarily coerce the update of the built-in package. (example: ~C-u M-x package-install~ ~casual-editkit~)
