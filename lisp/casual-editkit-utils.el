@@ -351,7 +351,8 @@ Commands pertaining to move word operations can be accessed here."
   ["Move Word"
    :class transient-row
    ("b" "Backward"  casual-editkit-move-word-backward :transient t)
-   ("f" "Forward"  casual-editkit-move-word-forward :transient t)]
+   ("f" "Forward"  casual-editkit-move-word-forward :transient t)
+   ("RET" "Done" transient-quit-all)]
   casual-editkit-cursor-navigation-group
   casual-editkit-navigation-group)
 
@@ -362,7 +363,8 @@ Commands pertaining to move sentence operations can be accessed here."
   ["Move Sentence"
    :class transient-row
    ("b" "Backward"  casual-editkit-move-sentence-backward :transient t)
-   ("f" "Forward"  casual-editkit-move-sentence-forward :transient t)]
+   ("f" "Forward"  casual-editkit-move-sentence-forward :transient t)
+   ("RET" "Done" transient-quit-all)]
   casual-editkit-cursor-navigation-group
   casual-editkit-navigation-group)
 
@@ -374,7 +376,8 @@ can be accessed here."
   ["Move Sexp"
    :class transient-row
    ("b" "Backward"  casual-editkit-move-sexp-backward :transient t)
-   ("f" "Forward"  casual-editkit-move-sexp-forward :transient t)]
+   ("f" "Forward"  casual-editkit-move-sexp-forward :transient t)
+   ("RET" "Done" transient-quit-all)]
   casual-editkit-cursor-navigation-group
   casual-editkit-navigation-group)
 

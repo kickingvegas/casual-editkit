@@ -328,7 +328,8 @@
 
       (let ((test-vectors
              '((:binding "b" :command casual-editkit-move-word-backward)
-               (:binding "f" :command casual-editkit-move-word-forward))))
+               (:binding "f" :command casual-editkit-move-word-forward)
+               (:binding "RET" :command transient-quit-all))))
 
         (casualt-suffix-testcase-runner test-vectors
                                         #'casual-editkit-move-word-tmenu
@@ -342,7 +343,8 @@
 
       (let ((test-vectors
              '((:binding "b" :command casual-editkit-move-sentence-backward)
-               (:binding "f" :command casual-editkit-move-sentence-forward))))
+               (:binding "f" :command casual-editkit-move-sentence-forward)
+               (:binding "RET" :command transient-quit-all))))
 
         (casualt-suffix-testcase-runner test-vectors
                                         #'casual-editkit-move-sentence-tmenu
@@ -356,7 +358,8 @@
 
       (let ((test-vectors
              '((:binding "b" :command casual-editkit-move-sexp-backward)
-               (:binding "f" :command casual-editkit-move-sexp-forward))))
+               (:binding "f" :command casual-editkit-move-sexp-forward)
+               (:binding "RET" :command transient-quit-all))))
 
         (casualt-suffix-testcase-runner test-vectors
                                         #'casual-editkit-move-sexp-tmenu
