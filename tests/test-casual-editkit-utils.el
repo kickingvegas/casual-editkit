@@ -581,7 +581,8 @@
                (:binding "m" :command rectangle-mark-mode)
                (:binding "N" :command rectangle-number-lines)
                (:binding "C" :command clear-rectangle)
-               (:binding "D" :command delete-whitespace-rectangle))))
+               (:binding "D" :command delete-whitespace-rectangle)
+               (:binding "RET" :command transient-quit-all))))
 
         (set-mark-command nil)
         (casualt-suffix-testcase-runner test-vectors
@@ -593,15 +594,15 @@
 (ert-deftest test-casual-editkit-transform-text-tmenu ()
   (let ((tmpfile "casual-editkit-transform-text-tmenu.txt"))
     (casualt-setup tmpfile)
-    (cl-letf (
-              (casualt-mock #'capitalize-dwim)
+    (cl-letf ((casualt-mock #'capitalize-dwim)
               (casualt-mock #'downcase-dwim)
               (casualt-mock #'upcase-dwim))
 
       (let ((test-vectors
              '((:binding "c" :command capitalize-dwim)
                (:binding "l" :command downcase-dwim)
-               (:binding "u" :command upcase-dwim))))
+               (:binding "u" :command upcase-dwim)
+               (:binding "RET" :command transient-quit-all))))
 
         (casualt-suffix-testcase-runner test-vectors
                                         #'casual-editkit-transform-text-tmenu
