@@ -26,6 +26,7 @@
 (require 'bookmark)
 (require 'org-agenda)
 (require 'recentf)
+(require 'simple)
 (require 'magit-status)
 (require 'magit-files)
 (require 'symbol-overlay)
@@ -232,7 +233,12 @@ Commands pertaining to editing operations can be accessed here."
      :inapt-if-not use-region-p)
     ("R" "Rectangle›" casual-editkit-rectangle-tmenu)]]
 
-  casual-editkit-navigation-group)
+
+  [:class transient-row
+   (casual-lib-quit-one)
+   ("RET" "Done" transient-quit-all)
+   ("U" "Undo" undo :transient t)
+   (casual-lib-quit-all)])
 
 (transient-define-prefix casual-editkit-mark-tmenu ()
   "Menu for ‘Mark’ commands.
@@ -608,7 +614,8 @@ Commands pertaining to rectangle operations can be accessed here."
     ("D" "Delete Leading Spaces" delete-whitespace-rectangle
      :if-not casual-editkit-buffer-read-only-p
      :inapt-if-not use-region-p
-     :transient t)]]
+     :transient t)
+    ("RET" "Done" transient-quit-all)]]
   casual-editkit-cursor-navigation-group
   casual-editkit-navigation-group)
 
@@ -617,9 +624,11 @@ Commands pertaining to rectangle operations can be accessed here."
 
 Commands pertaining to transformation operations can be accessed here."
   ["Transform"
-   ("c" "Capitialize" capitalize-dwim :transient t)
-   ("l" "Make Lower Case" downcase-dwim :transient t)
-   ("u" "Make Upper Case" upcase-dwim :transient t)]
+   [("c" "Capitialize" capitalize-dwim :transient t)
+    ("l" "Make Lower Case" downcase-dwim :transient t)
+    ("u" "Make Upper Case" upcase-dwim :transient t)]
+
+   [("RET" "Done" transient-quit-all)]]
   casual-editkit-cursor-navigation-group
   casual-editkit-navigation-group)
 
