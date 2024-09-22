@@ -27,30 +27,6 @@
 (require 'casual-editkit-test-utils)
 (require 'casual-editkit-utils)
 
-(defun casualt-unicode-db-assert (key control cmd)
-  (let ((test (funcall cmd key)))
-    (should (string= test control))))
-
-(defun casualt-editkit-unicode-assert (key control)
-  (casualt-unicode-db-assert key control #'casual-editkit-unicode-get))
-
-(ert-deftest test-casual-editkit-unicode-get ()
-  (let ((casual-lib-use-unicode nil))
-    (casualt-editkit-unicode-assert :previous "previous")
-    (casualt-editkit-unicode-assert :next "next")
-    (casualt-editkit-unicode-assert :first "first")
-    (casualt-editkit-unicode-assert :last "last")
-    (casualt-editkit-unicode-assert :swap "Swap")
-    (casualt-editkit-unicode-assert :jump "Jump"))
-
-  (let ((casual-lib-use-unicode t))
-    (casualt-editkit-unicode-assert :previous "↑")
-    (casualt-editkit-unicode-assert :next "↓")
-    (casualt-editkit-unicode-assert :first "⤒")
-    (casualt-editkit-unicode-assert :last "⤓")
-    (casualt-editkit-unicode-assert :swap "⇄")
-    (casualt-editkit-unicode-assert :jump "🚀")))
-
 (ert-deftest test-casual-editkit-open-tmenu ()
   (let ((tmpfile "casual-editkit-open-tmenu.txt"))
     (casualt-setup tmpfile)
