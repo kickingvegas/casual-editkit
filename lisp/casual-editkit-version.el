@@ -3,7 +3,7 @@
 ;; Copyright (C) 2024 Charles Choi
 
 ;; Author: Charles Choi <kickingvegas@gmail.com>
-;; Keywords: tools
+;; Keywords: tools, wp
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
