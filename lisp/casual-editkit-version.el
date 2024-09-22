@@ -3,7 +3,7 @@
 ;; Copyright (C) 2024 Charles Choi
 
 ;; Author: Charles Choi <kickingvegas@gmail.com>
-;; Keywords: tools
+;; Keywords: tools, wp
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
 
 ;;; Code:
 
-(defconst casual-editkit-version "1.0.4"
+(defconst casual-editkit-version "1.0.5"
   "Casual EditKit Version.")
 
 (defun casual-editkit-version ()
