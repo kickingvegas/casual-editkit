@@ -44,6 +44,7 @@ Emacs has many commands that are easy to forget if not used frequently. Menus ar
 * Requirements
 Casual EditKit requires usage of
 - Emacs ≥ 29.1
+- Magit ≥ 4.0.0
 - Casual Lib ≥ 1.1.0
 - Casual Symbol Overlay ≥ 1.0.1
   
