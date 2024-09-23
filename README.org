@@ -1,3 +1,5 @@
+[[https://melpa.org/#/casual-editkit][file:https://melpa.org/packages/casual-editkit-badge.svg]]
+
 * Casual EditKit
 An opinionated [[https://github.com/magit/transient][Transient]]-based user interface library for Emacs editing commands. 
 
