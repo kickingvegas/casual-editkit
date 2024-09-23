@@ -206,5 +206,5 @@ Casual EditKit is part of a suite of user interfaces for different Emacs package
 Different interfaces include those for I-Search, Dired, Info, Calc, Bookmarks, RE-Builder, IBuffer, and others. Learn more about them today!
 
 * Acknowledgments
-A heartfelt thanks to all the contributors to Emacs and [[https://github.com/magit/transient][Transient]]. This package would not be possible without your efforts.
+A heartfelt thanks to all the contributors to Emacs, Magit, Symbol Overlay, and [[https://github.com/magit/transient][Transient]]. This package would not be possible without your efforts.
 
