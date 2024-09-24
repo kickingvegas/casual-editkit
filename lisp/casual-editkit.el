@@ -5,8 +5,8 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/casual-editkit
 ;; Keywords: tools, wp
-;; Version: 1.0.7
-;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0") (casual-symbol-overlay "1.0.1") (magit "4.0.0"))
+;; Version: 1.0.8
+;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0") (casual-symbol-overlay "1.0.1") (magit "4.0.0") (transpose-frame "0.2.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -117,7 +117,7 @@ user-customized menu."
    ("," "Settings›" casual-editkit-settings-tmenu)
    (casual-lib-quit-all)
 
-   ("x" "Exit" save-buffers-kill-emacs)])
+   ("x" "Exit Emacs" save-buffers-kill-emacs)])
 
 (provide 'casual-editkit)
 ;;; casual-editkit.el ends here
