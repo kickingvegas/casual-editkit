@@ -40,6 +40,7 @@ EMACS_ELPA_DIR=$(HOME)/.config/emacs/elpa
 PACKAGE_PATHS=					\
 -L $(EMACS_ELPA_DIR)/compat-30.0.0.0		\
 -L $(EMACS_ELPA_DIR)/seq-2.24			\
+-L $(EMACS_ELPA_DIR)/transpose-frame-current	\
 -L $(EMACS_ELPA_DIR)/transient-current		\
 -L $(EMACS_ELPA_DIR)/magit-current		\
 -L $(EMACS_ELPA_DIR)/magit-section-current	\
