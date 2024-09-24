@@ -6,7 +6,7 @@
 ;; URL: https://github.com/kickingvegas/casual-editkit
 ;; Keywords: tools, wp
 ;; Version: 1.0.7
-;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0") (casual-symbol-overlay "1.0.1") (magit "4.0.0"))
+;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0") (casual-symbol-overlay "1.0.1") (magit "4.0.0") (transpose-frame "0.2.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by

@@ -49,6 +49,7 @@ Casual EditKit requires usage of
 - Magit ≥ 4.0.0
 - Casual Lib ≥ 1.1.0
 - Casual Symbol Overlay ≥ 1.0.1
+- transpose-frame ≥ 0.2.1
   
 Casual EditKit has been verified with the following configuration. 
 - Emacs 29.4 (macOS 14.5, Ubuntu Linux 22.04.4 LTS)
@@ -206,5 +207,5 @@ Casual EditKit is part of a suite of user interfaces for different Emacs package
 Different interfaces include those for I-Search, Dired, Info, Calc, Bookmarks, RE-Builder, IBuffer, and others. Learn more about them today!
 
 * Acknowledgments
-A heartfelt thanks to all the contributors to Emacs, Magit, Symbol Overlay, and [[https://github.com/magit/transient][Transient]]. This package would not be possible without your efforts.
+A heartfelt thanks to all the contributors to Emacs, [[https://github.com/magit/transient][Transient]], Magit, Symbol Overlay, and transpose-frame. This package would not be possible without your efforts.
 

@@ -30,6 +30,7 @@
 (require 'magit-status)
 (require 'magit-files)
 (require 'symbol-overlay)
+(require 'transpose-frame)
 (require 'casual-lib)
 (require 'casual-editkit-constants)
 
