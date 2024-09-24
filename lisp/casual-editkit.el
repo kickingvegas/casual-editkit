@@ -117,7 +117,7 @@ user-customized menu."
    ("," "Settings›" casual-editkit-settings-tmenu)
    (casual-lib-quit-all)
 
-   ("x" "Exit" save-buffers-kill-emacs)])
+   ("x" "Exit Emacs" save-buffers-kill-emacs)])
 
 (provide 'casual-editkit)
 ;;; casual-editkit.el ends here
