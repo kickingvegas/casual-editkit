@@ -51,6 +51,7 @@ VERSION := $(shell ./scripts/read-version.sh $(MAIN_EL))
 # BUMP_LEVEL: major|minor|patch|prerelease|build
 BUMP_LEVEL=patch
 VERSION_BUMP := $(shell python -m semver bump $(BUMP_LEVEL) $(VERSION))
+VERSION_LAST_TAG := $(shell git tag --sort=-creatordate | head -n 1)
 
 .PHONY: tests					\
 create-pr					\
@@ -122,7 +123,7 @@ create-release-tag: checkout-main bump
 
 create-gh-release: VERSION_BUMP:=$(shell python -m semver nextver $(VERSION) $(BUMP_LEVEL))
 create-gh-release: create-release-tag
-	gh release create -t v$(VERSION_BUMP) --notes-from-tag $(VERSION_BUMP)
+	gh release create -t v$(VERSION_BUMP) --notes-from-tag $(VERSION_LAST_TAG)
 
 status:
 	git status
