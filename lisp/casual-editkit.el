@@ -1,11 +1,11 @@
-;;; casual-editkit.el --- Transient UI for Symbol Overlay -*- lexical-binding: t; -*-
+;;; casual-editkit.el --- Transient user interface library for editing commands -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024  Charles Choi
 
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/casual-editkit
 ;; Keywords: tools, wp
-;; Version: 1.0.8
+;; Version: 1.0.9
 ;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0") (casual-symbol-overlay "1.0.1") (magit "4.0.0") (transpose-frame "0.2.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
