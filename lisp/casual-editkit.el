@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/casual-editkit
 ;; Keywords: tools, wp
-;; Version: 1.0.10-rc.1
+;; Version: 1.0.10
 ;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0") (casual-symbol-overlay "1.0.1") (magit "4.0.0") (transpose-frame "0.2.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
