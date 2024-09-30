@@ -1,4 +1,4 @@
-;;; casual-editkit.el --- Transient UI for Symbol Overlay -*- lexical-binding: t; -*-
+;;; casual-editkit.el --- Transient user interface library for editing commands -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024  Charles Choi
 
