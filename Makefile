@@ -77,7 +77,7 @@ bump-casual:
 	sed -i 's/;; Version: $(VERSION)/;; Version: $(VERSION_BUMP)/' $(MAIN_EL)
 	sed -i 's/(defconst casual-editkit-version "$(VERSION)"/(defconst casual-editkit-version "$(VERSION_BUMP)"/' $(VERSION_EL)
 
-bump: checkout-development bump-casual
+bump: bump-casual
 	git commit -m 'Bump version to $(VERSION_BUMP)' $(MAIN_EL) $(VERSION_EL)
 	git push
 
