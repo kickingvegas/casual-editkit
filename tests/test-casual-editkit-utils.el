@@ -133,6 +133,30 @@
                                         '(lambda () (random 5000)))))
     (casualt-breakdown tmpfile)))
 
+(ert-deftest test-casual-editkit-emoji-symbols-tmenu ()
+  (let ((tmpfile "casual-editkit-emoji-symbols-tmenu.txt"))
+    (casualt-setup tmpfile)
+    (emacs-lisp-mode)
+    (cl-letf ()
+      (let ((test-vectors
+             '((:binding "e" :command emoji-search)
+               (:binding "l" :command emoji-list)
+               (:binding "d" :command emoji-describe)
+               (:binding "+" :command emoji-zoom-increase)
+               (:binding "-" :command emoji-zoom-decrease)
+               (:binding "0" :command emoji-zoom-reset)
+               (:binding "'" :command casual-editkit-smart-single-quote-dwim)
+               (:binding "\"" :command casual-editkit-smart-double-quote-dwim)
+               (:binding "_" :command casual-editkit-smart-low-quote-dwim)
+               (:binding "c" :command casual-editkit-smart-comillas-quote-dwim)
+               ;;(:binding "i" :command insert-char)
+               )))
+
+        (casualt-suffix-testcase-runner test-vectors
+                                        #'casual-editkit-emoji-symbols-tmenu
+                                        '(lambda () (random 5000)))))
+    (casualt-breakdown tmpfile)))
+
 (ert-deftest test-casual-editkit-mark-tmenu ()
   (let ((tmpfile "casual-editkit-mark-tmenu.txt"))
     (casualt-setup tmpfile)

@@ -26,6 +26,7 @@ Casual EditKit endeavors to surface the many different editing commands offered 
 - Open commands
 - Project commands
 - Bookmark commands
+- Emoji & Symbol Insertion (including smart quotes)
 - Tool commands
 - Macro commands
 
@@ -181,6 +182,12 @@ Project-related commands are listed in this menu.
 Commands edit, add, or jump to a bookmark are captured in this menu.
 
 [[file:docs/images/casual-editkit-bookmarks-screenshot.png]]
+
+** Emoji & Symbol Insertion (~casual-editkit-emoji-symbol-tmenu~)
+
+Insert emoji and symbol characters with this menu. Smart quotes are also supported by this menu and can be applied to a text region.
+
+[[file:docs/images/casual-editkit-emoji-symbols-screenshot.png]]
 
 ** Tool commands (~casual-editkit-tools-tmenu~)
 This menu holds an assorted collection of different tools/utilities provided by Emacs. Motivated users can use this Transient prefix as starting point to create a menu customized to their needs.

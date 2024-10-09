@@ -65,9 +65,8 @@ user-customized menu."
     ("s" "Save" save-buffer)]
 
    ["Edit"
+    :pad-keys t
     ("e" "Edit›" casual-editkit-edit-tmenu)
-    ("i" "Insert Character…" insert-char
-     :if-not casual-editkit-buffer-read-only-p)
     ("p" "Fill Paragraph" fill-paragraph
      :if-not casual-editkit-buffer-read-only-p)
     ("l" "Join line" join-line
@@ -75,6 +74,8 @@ user-customized menu."
      :if-not casual-editkit-buffer-read-only-p)
     ("C-o" "Open line" open-line
      :transient t
+     :if-not casual-editkit-buffer-read-only-p)
+    ("E" "Emoji & Symbols›" casual-editkit-emoji-symbols-tmenu
      :if-not casual-editkit-buffer-read-only-p)]
 
    ["Sexp"
