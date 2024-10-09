@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/casual-editkit
 ;; Keywords: tools, wp
-;; Version: 1.0.12
+;; Version: 1.0.13-rc.1
 ;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0") (casual-symbol-overlay "1.0.1") (magit "4.0.0") (transpose-frame "0.2.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -65,9 +65,8 @@ user-customized menu."
     ("s" "Save" save-buffer)]
 
    ["Edit"
+    :pad-keys t
     ("e" "Edit›" casual-editkit-edit-tmenu)
-    ("i" "Insert Character…" insert-char
-     :if-not casual-editkit-buffer-read-only-p)
     ("p" "Fill Paragraph" fill-paragraph
      :if-not casual-editkit-buffer-read-only-p)
     ("l" "Join line" join-line
@@ -75,6 +74,8 @@ user-customized menu."
      :if-not casual-editkit-buffer-read-only-p)
     ("C-o" "Open line" open-line
      :transient t
+     :if-not casual-editkit-buffer-read-only-p)
+    ("E" "Emoji & Symbols›" casual-editkit-emoji-symbols-tmenu
      :if-not casual-editkit-buffer-read-only-p)]
 
    ["Sexp"

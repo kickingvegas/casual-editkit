@@ -117,6 +117,7 @@ also available from here."
 
 Commands pertaining to project operations can be accessed here."
   ["Project"
+   :description (lambda () (casual-editkit--current-project-label))
    ["File"
     ("f" "Open…" project-find-file)
     ("B" "Switch buffer…" project-switch-to-buffer)]
@@ -188,6 +189,57 @@ Commands pertaining to editing operations can be accessed here."
      :inapt-if-not use-region-p)
     ("R" "Rectangle›" casual-editkit-rectangle-tmenu)]]
 
+
+  [:class transient-row
+   (casual-lib-quit-one)
+   ("RET" "Done" transient-quit-all)
+   ("U" "Undo" undo :transient t)
+   (casual-lib-quit-all)])
+
+(transient-define-prefix casual-editkit-emoji-symbols-tmenu ()
+    "Menu for ‘Emoji & Symbols’ commands.
+
+Commands pertaining to insert character operations can be
+accessed here. Included are commands for smart quotes and
+inserting common miscellaneous symbols."
+  ["Emoji & Symbols"
+   ["Insert"
+    ("e" "Emoji…" emoji-search)
+    ;;("r" "Recent Emoji…" emoji-recent)
+    ("i" "Character…" insert-char)]
+
+   ["Emoji"
+    ("l" "List" emoji-list)
+    ("d" "Describe" emoji-describe)]
+
+   ["Zoom"
+    ("+" "Increase" emoji-zoom-increase :transient t)
+    ("-" "Decrease" emoji-zoom-decrease :transient t)]
+
+   [""
+    ("0" "Reset" emoji-zoom-reset :transient t)]]
+
+  ["Smart Quotes"
+   :class transient-row
+   ("'" "‘single’" casual-editkit-smart-single-quote-dwim)
+   ("\"" "“double”" casual-editkit-smart-double-quote-dwim)
+   ("_" "„low”" casual-editkit-smart-low-quote-dwim)
+   ("c" "«comillas»" casual-editkit-smart-comillas-quote-dwim)
+   ("a" "’" (lambda () (interactive) (insert "’")))]
+
+  ["Misc"
+   :class transient-row
+   ("." "…" (lambda () (interactive) (insert "…")))
+   ("b" "•" (lambda () (interactive) (insert "•")))
+   ("m" "—" (lambda () (interactive) (insert "—")))
+   ("o" "°" (lambda () (interactive) (insert "°")))
+   ("?" "¿" (lambda () (interactive) (insert "¿")))
+   ("!" "¡" (lambda () (interactive) (insert "¡")))
+   ("p" "¶" (lambda () (interactive) (insert "¶")))
+   ("s" "§" (lambda () (interactive) (insert "§")))
+   ("C" "©" (lambda () (interactive) (insert "©")))
+   ("r" "®" (lambda () (interactive) (insert "®")))
+   ("t" "™" (lambda () (interactive) (insert "™")))]
 
   [:class transient-row
    (casual-lib-quit-one)
@@ -786,7 +838,52 @@ that supports the arguments ‘--backward’ and ‘--regexp’."
           (call-interactively #'isearch-backward))
       (if regexp
             (call-interactively #'isearch-forward-regexp)
-          (call-interactively #'isearch-forward)))))
+        (call-interactively #'isearch-forward)))))
+
+
+(defun casual-editkit--smart-quote-dwim (open-quote close-quote)
+  "Insert or enclose a region with OPEN-QUOTE, CLOSE-QUOTE.
+
+OPEN-QUOTE - string to open quote with.
+CLOSE-QUOTE - string to close quote with.
+
+If `use-region-p' is t, then enclose region with OPEN-QUOTE,
+CLOSE-QUOTE, otherwise just insert OPEN-QUOTE and CLOSE-QUOTE
+with no space between."
+  (if (use-region-p)
+      (let* ((start (region-beginning))
+             (end (region-end))
+             (content (string-trim (buffer-substring start end))))
+        (delete-region start end)
+        (insert (concat open-quote content close-quote)))
+    (insert (concat open-quote close-quote))))
+
+(defun casual-editkit-smart-single-quote-dwim ()
+  "Insert or enclose a region with smart single quotes."
+  (interactive)
+  (casual-editkit--smart-quote-dwim "‘" "’"))
+
+(defun casual-editkit-smart-double-quote-dwim ()
+  "Insert or enclose a region with smart double quotes."
+  (interactive)
+  (casual-editkit--smart-quote-dwim "“" "”"))
+
+(defun casual-editkit-smart-low-quote-dwim ()
+  "Insert or enclose a region with „”."
+  (interactive)
+  (casual-editkit--smart-quote-dwim "„" "”"))
+
+(defun casual-editkit-smart-comillas-quote-dwim ()
+  "Insert or enclose a region with «»."
+  (interactive)
+  (casual-editkit--smart-quote-dwim "«" "»"))
+
+(defun casual-editkit--current-project-label ()
+  "Current project label."
+  (let* ((project (project-current)))
+    (if project
+        (format "Project: %s" (nth 2 project))
+      "Project")))
 
 (provide 'casual-editkit-utils)
 ;;; casual-editkit-utils.el ends here
