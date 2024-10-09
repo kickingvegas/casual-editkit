@@ -59,10 +59,10 @@
                (:binding "s" :command save-buffer)
 
                (:binding "e" :command casual-editkit-edit-tmenu)
-               ;; (:binding "i" :command insert-char)
                (:binding "p" :command fill-paragraph)
                (:binding "l" :command join-line)
                (:binding "C-o" :command open-line)
+               (:binding "E" :command casual-editkit-emoji-symbols-tmenu)
 
                (:binding "m" :command mark-sexp)
                (:binding "c" :command casual-editkit-copy-sexp)
