@@ -117,6 +117,7 @@ also available from here."
 
 Commands pertaining to project operations can be accessed here."
   ["Project"
+   :description (lambda () (casual-editkit--current-project-label))
    ["File"
     ("f" "Open…" project-find-file)
     ("B" "Switch buffer…" project-switch-to-buffer)]
@@ -876,6 +877,13 @@ with no space between."
   "Insert or enclose a region with «»."
   (interactive)
   (casual-editkit--smart-quote-dwim "«" "»"))
+
+(defun casual-editkit--current-project-label ()
+  "Current project label."
+  (let* ((project (project-current)))
+    (if project
+        (format "Project: %s" (nth 2 project))
+      "Project")))
 
 (provide 'casual-editkit-utils)
 ;;; casual-editkit-utils.el ends here
