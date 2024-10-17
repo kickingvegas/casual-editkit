@@ -29,8 +29,6 @@
 (require 'simple)
 (require 'magit-status)
 (require 'magit-files)
-(require 'symbol-overlay)
-(require 'transpose-frame)
 (require 'casual-lib)
 (require 'casual-editkit-constants)
 
@@ -440,7 +438,6 @@ Commands pertaining to window management operations can be accessed here."
      :description (lambda () (casual-editkit-unicode-get :split-window-horizontally)))]
 
    ["Misc"
-    ("t" "Transpose" transpose-frame)
     ;; ("T" "Toggle Tab Bar" mac-toggle-tab-bar
     ;;  :if casual-editkit-window-system-mac-p)
     ;;("J" "Jump to Window…" ace-select-window)
